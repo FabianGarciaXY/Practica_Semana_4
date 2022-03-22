@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./app.js" defer></script>
+    <link rel="stylesheet" href="./style.css">
+    <title>Poke API</title>
+</head>
+<body>
+    <h1>
+        Poke API
+    </h1>
+
+    <div id="backg">
+
+    <div class="pokedex">
+
+        
+        <div class="input-area">
+            <span>Pokedex</span>
+
+            <div class="images-received">
+                <figure id="image-container">
+                    <div>
+
+                        <span id="name"></span>
+                        <span></span>
+                        <span id="id"></span>
+
+                    </div>
+
+                    <img src="" alt="" id="poke-img">
+                </figure>
+    
+            </div>
+            
+            <input name="poke-name" id="poke-name" placeholder="Example: charmander"><br><br>
+            <div>
+            </div>
+            <div id="pokedex-controls">
+                <button onclick="fetchPokemon()" id="new-pokemon-button">New Pokemon</button>
+            </div>
+        </div>
+       
+        <div class="top-shape-square"></div>
+        <div class="top-shape-triangle"></div>
+
+        <div class="poke-info">
+            <div>
+                <ul class="statistics">
+
+                    <span>Hp:</span><li class="statistic-item"></li>
+                    <span>Attack:</span><li class="statistic-item"></li>
+                    <span>Defense:</span><li class="statistic-item"></li>
+                    <span>Special-attack:</span><li class="statistic-item"></li>
+                    <span>Special-defense:</span><li class="statistic-item"></li>
+                    <span>Speed</span><li class="statistic-item"></li>
+
+                </ul>
+            </div>
+            <div>
+                <ul class="movements">
+                    <li class="movement-item"></li>
+                </ul>
+            </div>
+            <div class="more-controls">
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+    <footer>
+        <span> By @fabiangahezz </span>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,110 @@
+/*
+    font-family: 'Audiowide', cursive;
+*/
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
+body {
+    background-color: rgba(0, 0, 0, 0.74);
+    font-family: 'Audiowide', cursive;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+#backg {
+    background-image: url('./images/11942.jpg');
+    background-size: 1500px;
+
+}
+
+h1 {
+    border: 2.5px solid black;
+    max-width: 500px;
+    margin: 20px auto 0px auto;
+    margin-bottom: 20px;
+    color: aquamarine;
+}
+
+label {
+    border: 2.5px black solid;
+    padding: 5px;
+}
+
+.pokedex {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: fit-content;
+    margin-bottom: 0px;
+    padding-top: 50px;
+    padding-bottom: 80px;
+
+}
+
+#image-container {
+    width: 230px;
+    height: 230px;
+    border: solid 2px;
+    padding: 10px;
+    background-image: linear-gradient(to right, rgb(252, 227, 227), rgb(184, 178, 158));
+}
+img {
+    z-index: 1;
+    position:relative;
+    width: 220px;
+    height: auto;
+}
+
+.input-area {
+    background-color: rgb(180, 55, 33);  
+
+    backdrop-filter: blur(5px);
+
+    height: 450px;
+    width: 350px;
+    border-radius: 20px 10px 0 50px;
+}   input {
+    background-color: transparent;
+    padding: 6px;
+    border-color: rgb(163, 199, 199);
+}
+.poke-info {
+    /* Glass effect */
+    background-color: rgb(180, 55, 33);  
+    backdrop-filter: blur(5px);
+
+    border-radius: 0% 0% 3% 0%;
+    width: 350px;
+    margin-top: 70px;
+    height: 380px;
+    border-radius: 0px 15px 50px 0px;
+}
+.top-shape-square {
+    background-color: rgb(180, 55, 33);  
+    backdrop-filter: blur(5px);
+
+    position: absolute;
+    width: 220px;
+    height: 45px;
+    margin-top: 25px;
+    margin-left: 190px;
+    border-radius: 0px 35px 0 0;
+}
+.top-shape-triangle {
+    backdrop-filter: blur(5px);
+
+    
+    margin-left: 449px;
+    position: absolute;
+    width: 0;
+    height: 0px;
+    margin-top: 26px;
+
+    border-bottom: 45px solid rgb(180, 55, 33);
+    border-right: 92px solid transparent;
+}    
+
+.statistic-item {
+    text-decoration-line: none;
+    list-style: none;
+}
