@@ -38,36 +38,70 @@ label {
     margin-bottom: 0px;
     padding-top: 50px;
     padding-bottom: 80px;
-
 }
 
 #image-container {
+    color: #2b2f308c;
+    margin-top: 40px;
     width: 230px;
     height: 230px;
     border: solid 2px;
     padding: 10px;
-    background-image: linear-gradient(to right, rgb(252, 227, 227), rgb(184, 178, 158));
+    background-image: linear-gradient(to right, rgb(252, 227, 227), rgba(184, 178, 158, 0.808));
+    border-radius: 10px;
+    box-shadow: -1px 2px 4px 1px;
+
 }
 img {
     z-index: 1;
     position:relative;
-    width: 220px;
+    width: 205px;
     height: auto;
+    margin-top: -10px;
+    margin-right: 50px;
+}
+
+.screen-1-data {
+    display: flex;
+    justify-content: space-between;
+
+}
+.characteriscs{
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+
 }
 
 .input-area {
     background-color: rgb(180, 55, 33);  
-
     backdrop-filter: blur(5px);
-
     height: 450px;
     width: 350px;
     border-radius: 20px 10px 0 50px;
+    box-shadow: -1px 2px 4px 1px;
+
 }   input {
-    background-color: transparent;
+    background-color: rgba(255, 0, 0, 0.144);
+    border: rgba(95, 6, 6, 0.164) solid;
     padding: 6px;
-    border-color: rgb(163, 199, 199);
+    width: 160px;
+    height: 22px;
+    border-radius: 20px;
+    text-align: center;
+}   input:hover {
+    box-shadow: 1px 2px 5px;
+}   input:focus {
+    font-size: 15.5px;
 }
+
+#new-pokemon-button {
+    border-radius: 35px 10px 35px 10px;
+    width: 95px;
+    padding: 10px 30px;
+    box-shadow: -1px -1px 6px 3px;
+}
+
 .poke-info {
     /* Glass effect */
     background-color: rgb(180, 55, 33);  
@@ -78,8 +112,11 @@ img {
     margin-top: 70px;
     height: 380px;
     border-radius: 0px 15px 50px 0px;
+    box-shadow: 2px 2px 2px 1px;
+
 }
 .top-shape-square {
+
     background-color: rgb(180, 55, 33);  
     backdrop-filter: blur(5px);
 
@@ -104,7 +141,118 @@ img {
     border-right: 92px solid transparent;
 }    
 
-.statistic-item {
+
+
+.screen-2 {
+    background-image: linear-gradient(to right, rgb(252, 227, 227), rgb(184, 178, 158));
+    width: 290px;
+    height: 160px;
+    margin-top: -183px;
+    margin-left: 1px;
+    border-radius: 5px;
+    z-index: -1;
+
+}
+.screen-2-borders {
+    box-shadow: -1px 2px 4px 1px;
+
+    background-color: #4e5557;
+    width: 300px;
+    height: 170px;
+    margin-top: 30px;
+    margin-left: -6px;
+    border-radius: 5px;
+    border: 2px solid;
+    border-radius: 10px 10px 10px 10px;
+    z-index: -2;
+
+}
+
+.statistics {
+
+    display: flex;
+    flex-direction: row;
+    padding: 15px;
+    display: flex;
+    font-size: 13.5px;
+    gap: 20px;
+    justify-content: space-around;
+}
+
+.stat-1 {
+    height: 125px;
+    width: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.stat-1 > span {
+    display: flex;
+    justify-content: space-between;
+}
+
+.statistic-item, li {
     text-decoration-line: none;
     list-style: none;
+    color: #4e5557;
+}
+
+
+/* Controls */
+#top {
+    position: absolute;
+    width: 40px;
+    height: 50px;
+    background-color: antiquewhite;
+    border-radius: 10px 10px 0 0;
+    margin-left: 0px;
+    margin-top: 20px;
+}
+#right {
+    position: absolute;
+    width: 50px;
+    height: 40px;
+    background-color: antiquewhite;
+    border-radius: 0px 10px 10px 0; 
+    margin-left: 40px;
+    margin-top: 70px;
+}
+#down {
+    position: absolute;
+    width: 40px;
+    height: 50px;
+    background-color: antiquewhite;
+    border-radius: 0px 0px 10px 10px; 
+    margin-top: 110px;
+}
+#left {
+    position: absolute;
+    width: 50px;
+    height: 40px;
+    background-color: antiquewhite;
+    border-radius: 10px 0 0px 10px; 
+    margin-left: -50px; 
+    margin-top: 70px;
+}
+
+#center {
+    position: absolute;
+    margin-top: 70px;
+    width: 40px;
+    height: 40px;
+}
+
+.movements {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    margin-top: 25px;
+    gap: 10px;
+}
+
+.stats, .mov {
+    border-radius: 25px 10px 28px 0; 
+    box-shadow: -1px 2px 4px 1px;
+    width: 50px;
+    height: 60px;
 }

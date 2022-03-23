@@ -19,10 +19,22 @@ const fetchPokemon = () => {
             console.log( data );
             // Getting name
             const pokeName = data.name;
-            name( pokeName )
+            pokemonName( pokeName );
+
+            // Getting experience
+            const pokeExperience = data.base_experience;
+            experience( pokeExperience );
+
+            // Getting weight
+            const pokemonWeight = data.weight;
+            pokeWeight( pokemonWeight );
+
+            // Getting height
+            const pokemonHeight = data.height;
+            pokeHeight( pokemonHeight );
 
             // Getting pokemon images
-            const pokeImg = data.sprites.other.home.front_default;
+            const pokeImg = data.sprites.other['official-artwork'].front_default;
             pokeImage( pokeImg );
 
             // Getting out id // Temporal
@@ -51,7 +63,7 @@ const statistics = ( value ) => {
     const statisticsArray = document.querySelectorAll('.statistic-item');
 
     for (let i in value) {
-        statisticsArray[i].textContent = ` ${value[i].base_stat}`
+        statisticsArray[i].textContent =`${value[i].base_stat}`;
     }
 }
 
@@ -65,13 +77,55 @@ const moves = ( value ) => {
 }
 
 // Fetching name 
-const name = ( value ) => {
+const pokemonName = ( value ) => {
     const pokemonName = document.querySelector('#name');
-    pokemonName.textContent = value;
+    pokemonName.textContent = value.toUpperCase();
 }
 
 // Fetching Pokemon Id
 const id = ( value ) => {
     const pokemonId = document.getElementById('id');
-    pokemonId.textContent = " #" + value;
+    document.getElementById('pre-id').textContent = "# "
+
+    pokemonId.textContent = value;
 }
+
+// Fetching experience
+const experience = ( value ) => {
+    const pokeExperience = document.getElementById('experience');
+    pokeExperience.textContent = 'Exp: ' + value;
+}
+
+// Fetching weight
+const pokeWeight = ( value ) => {
+    const pokemonWeight = document.getElementById('weight');
+    pokemonWeight.textContent = 'Weight: ' +  value;
+}
+
+// Fetching height
+const pokeHeight = ( value ) => {
+    const pokemonWeight = document.getElementById('height');
+    pokemonWeight.textContent = 'Height: ' +  value;
+}
+
+
+
+
+// Fix it
+const nextPokeButton = document.querySelector('#top');
+nextPokeButton.addEventListener('click', ()=> {
+
+    const pokeInput = document.getElementById('poke-name');
+
+    let pokemonId = document.getElementById('id');
+    let newPoke = parseInt(pokemonId.textContent);
+    newPoke = newPoke + 1;
+
+    console.log(newPoke)
+
+    pokeInput.textContent = newPoke.toString();
+    if(!pokemonId) {
+        //        
+    }
+    fetchPokemon()
+})

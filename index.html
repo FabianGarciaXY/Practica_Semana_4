@@ -19,15 +19,22 @@
 
         
         <div class="input-area">
-            <span>Pokedex</span>
+            <span></span>
 
             <div class="images-received">
                 <figure id="image-container">
-                    <div>
+                    <div class="screen-1-data">
 
-                        <span id="name"></span>
-                        <span></span>
-                        <span id="id"></span>
+                        <div class="characteriscs">
+                            <span id="name"></span>
+                            <span id="pre-id"></span><span id="id"></span>
+                        </div>
+
+                        <div class="characteriscs">
+                            <span id="height"></span>
+                            <span id="weight"></span>
+                            <span id="experience"></span>
+                        </div>
 
                     </div>
 
@@ -36,11 +43,11 @@
     
             </div>
             
-            <input name="poke-name" id="poke-name" placeholder="Example: charmander"><br><br>
+            <input name="poke-name" id="poke-name" placeholder="Type a name"><br><br>
             <div>
             </div>
             <div id="pokedex-controls">
-                <button onclick="fetchPokemon()" id="new-pokemon-button">New Pokemon</button>
+                <button onclick="fetchPokemon()" id="new-pokemon-button">Get</button>
             </div>
         </div>
        
@@ -48,24 +55,46 @@
         <div class="top-shape-triangle"></div>
 
         <div class="poke-info">
-            <div>
+
+            <div class="screen-2-borders">
+            </div>
+            <div class="screen-2">
+
+                
+
                 <ul class="statistics">
 
-                    <span>Hp:</span><li class="statistic-item"></li>
-                    <span>Attack:</span><li class="statistic-item"></li>
-                    <span>Defense:</span><li class="statistic-item"></li>
-                    <span>Special-attack:</span><li class="statistic-item"></li>
-                    <span>Special-defense:</span><li class="statistic-item"></li>
-                    <span>Speed</span><li class="statistic-item"></li>
+                        <div class="stat-1">
+                            <span>Hp: <li class="statistic-item"></li> </span>
+                            <span>Attack:<li class="statistic-item"></li> </span>
+                            <span>Defense:<li class="statistic-item"></li> </span>
+                        </div>
+
+                        <div class="stat-1">
+                            <span>Sp-attack:<li class="statistic-item"></li> </span>
+                            <span>Sp-defense:<li class="statistic-item"></li> </span>
+                            <span>Speed: <li class="statistic-item"></li></span>
+                        </div>
 
                 </ul>
-            </div>
-            <div>
-                <ul class="movements">
-                    <li class="movement-item"></li>
-                </ul>
-            </div>
-            <div class="more-controls">
+
+                <div class="movements">
+                    <button class="stats">Stats</button>
+                    <button class="mov">Mov</button>
+                </div>
+
+            
+
+
+                <div class="controls">
+
+                    <button id="top">+</button>
+                    <button id="right">+</button>
+                    <button id="down">-</button>
+                    <button id="left">-</button>
+                    <button id="center">·</button>
+
+                </div>
 
             </div>
         </div>
