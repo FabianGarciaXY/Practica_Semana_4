@@ -12,17 +12,21 @@ body {
     padding: 0;
 }
 #backg {
-    background-image: url('./images/11942.jpg');
-    background-size: 1500px;
+    background-image: url('./images/3.jpg');
+    background-size: 1000px;
 
 }
 
 h1 {
-    border: 2.5px solid black;
+    border: 2.5px solid rgb(252, 210, 210);
     max-width: 500px;
     margin: 20px auto 0px auto;
     margin-bottom: 20px;
     color: aquamarine;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 5px;
+    padding: 4px;
+    border-style: dashed;
 }
 
 label {
@@ -47,7 +51,7 @@ label {
     height: 230px;
     border: solid 2px;
     padding: 10px;
-    background-image: linear-gradient(to right, rgb(252, 227, 227), rgba(184, 178, 158, 0.808));
+    background-image: linear-gradient(to bottom, rgb(233, 226, 186), rgba(255, 233, 161, 0.81));
     border-radius: 10px;
     box-shadow: -1px 2px 4px 1px;
 
@@ -265,15 +269,28 @@ button {
     display: flex;
     flex-direction: column;
     width: 290px;
-    height: 159px;
     margin-top: -15px;
     position: absolute;
 }
 
 .new-div > ul {
-    flex-wrap: wrap;
-    justify-content: space-between;
+    height: 133px;
     display: flex;
-    padding: 20px;
-    gap: 5px;
+    flex-direction: column;
+    padding-left: 20px;
+    padding-top: 5px;
+    gap: 10px;
+    overflow:hidden;
+    flex-wrap: wrap;
+}
+
+.new-div > ul > li {
+    width:10em;
+    float:left;
+    display: flex;
+    list-style: none;
+}
+
+footer {
+    color: #a8b8be;
 }

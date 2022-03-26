@@ -63,7 +63,7 @@ const statistics = ( value ) => {
 
     for (let i in value) {
         statisticsArray[i].textContent =`${value[i].base_stat}`;
-    }
+    }   
 }
 
 // Fetching name 
@@ -102,14 +102,13 @@ const pokeHeight = ( value ) => {
 // Fetching Moves
 const moves = ( value ) => {
 
-    if (newDiv) {
-        newScreenTwo.removeChild(newDiv)
-    } else {
+    const previewsDivContainer = document.querySelector('.new-div');
+    if (previewsDivContainer) {
+        let statisticContainer = document.querySelector('.statistics');
+        statisticContainer.removeChild(previewsDivContainer);
+    }
 
     const newScreenTwo = document.querySelector('.statistics');
-    document.querySelector('div.stat-1').style["z-index"] = '-1'
-    document.querySelector('div.stat-2').style["z-index"] = '-1'
-
     const newDiv = document.createElement('div');    
     const newDiv2 = document.createElement('div');
     const newTitle = document.createElement('span');
@@ -119,7 +118,6 @@ const moves = ( value ) => {
     newDiv.classList.add('new-div');
 
     for ( let i = 0; i < 9; i++ ) {
-
         const liItem = document.createElement('li');
         liItem.textContent = value[i].move.name;
         ulList.appendChild( liItem );
@@ -128,27 +126,80 @@ const moves = ( value ) => {
     newDiv2.appendChild(newTitle)
     newDiv.appendChild(newDiv2);
     newDiv.appendChild(ulList);
-    newScreenTwo.appendChild( newDiv );
-    }
+    newScreenTwo.appendChild(newDiv);
+    newDiv.style['z-index'] = '-1'
 }
 
-// Fix it
+// Plus button
 const nextPokeButton = document.querySelector('#top');
-nextPokeButton.addEventListener('click', ()=> {
+const rightButton = document.querySelector('#right');
+nextPokeButton.addEventListener('click', next);
+rightButton.addEventListener( 'click', next )
+
+function next() {
 
     const pokeInput = document.getElementById('poke-name');
-
     let pokemonId = document.getElementById('id');
     let newPoke = parseInt(pokemonId.textContent);
+
     newPoke = newPoke + 1;
-
     console.log(newPoke)
-
-    pokeInput.textContent = newPoke.toString();
+    pokeInput.value = newPoke.toString();
     if(!pokemonId) {
         //        
     }
     fetchPokemon()
+    document.querySelector('.new-div').style['z-index'] = '-1';
+    document.querySelector('.stat-1').style['z-index'] = '1';
+    document.querySelector('.stat-2').style['z-index'] = '1';
+}
+
+const prevPokeButton = document.querySelector('#down');
+const leftPokeButton = document.querySelector('#left');
+prevPokeButton.addEventListener('click', prev);
+leftPokeButton.addEventListener('click', prev);
+
+function prev() {
+
+    const pokeInput = document.getElementById('poke-name');
+    let pokemonId = document.getElementById('id');
+
+    let newPoke = parseInt(pokemonId.textContent);
+
+    newPoke = newPoke + -1;
+
+    console.log(newPoke)
+    pokeInput.value = newPoke.toString();
+    if(!pokemonId) {
+        //        
+    }
+    fetchPokemon()
+    document.querySelector('.new-div').style['z-index'] = '-1';
+    document.querySelector('.stat-1').style['z-index'] = '1';
+    document.querySelector('.stat-2').style['z-index'] = '1';
+}
+
+
+// Statistics Button
+const statsButton = document.querySelector('.stats');
+statsButton.addEventListener( 'click', () => {
+    const movementsContainer = document.querySelector('.new-div');
+    const statsContainer1 = document.querySelector('.stat-1')
+    const statsContainer2 = document.querySelector('.stat-2');
+
+    movementsContainer.style['z-index'] = '-1';
+    statsContainer1.style['z-index'] = '1';
+    statsContainer2.style['z-index'] = '1';
 })
 
 // Movements Button
+const movButton = document.querySelector('.mov');
+movButton.addEventListener( 'click', () => {
+    const movementsContainer = document.querySelector('.new-div');
+    const statsContainer1 = document.querySelector('.stat-1');
+    const statsContainer2 = document.querySelector('.stat-2');
+
+    statsContainer1.style['z-index'] = '-1';
+    statsContainer2.style['z-index'] = '-1';
+    movementsContainer.style['z-index'] = '1';
+})
