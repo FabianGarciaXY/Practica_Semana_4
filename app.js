@@ -47,8 +47,7 @@ const fetchPokemon = () => {
 
             // Getting pokemon Movements
             const movesArray = data.moves;
-            moves( movesArray );    
-
+            moves( movesArray );
         })
 }
 
@@ -65,15 +64,6 @@ const statistics = ( value ) => {
     for (let i in value) {
         statisticsArray[i].textContent =`${value[i].base_stat}`;
     }
-}
-
-// Fetching Moves
-const moves = ( value ) => {
-
-    for ( let i in value ) {
-        console.log( value[i].move.name )
-    }
-
 }
 
 // Fetching name 
@@ -109,7 +99,38 @@ const pokeHeight = ( value ) => {
 }
 
 
+// Fetching Moves
+const moves = ( value ) => {
 
+    if (newDiv) {
+        newScreenTwo.removeChild(newDiv)
+    } else {
+
+    const newScreenTwo = document.querySelector('.statistics');
+    document.querySelector('div.stat-1').style["z-index"] = '-1'
+    document.querySelector('div.stat-2').style["z-index"] = '-1'
+
+    const newDiv = document.createElement('div');    
+    const newDiv2 = document.createElement('div');
+    const newTitle = document.createElement('span');
+    const ulList = document.createElement('ul');
+
+    newTitle.textContent = 'Movements';
+    newDiv.classList.add('new-div');
+
+    for ( let i = 0; i < 9; i++ ) {
+
+        const liItem = document.createElement('li');
+        liItem.textContent = value[i].move.name;
+        ulList.appendChild( liItem );
+    }
+
+    newDiv2.appendChild(newTitle)
+    newDiv.appendChild(newDiv2);
+    newDiv.appendChild(ulList);
+    newScreenTwo.appendChild( newDiv );
+    }
+}
 
 // Fix it
 const nextPokeButton = document.querySelector('#top');
@@ -129,3 +150,5 @@ nextPokeButton.addEventListener('click', ()=> {
     }
     fetchPokemon()
 })
+
+// Movements Button
